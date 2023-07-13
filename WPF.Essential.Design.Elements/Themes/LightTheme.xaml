@@ -2,15 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 	<!-- Background Colors -->
-	<SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#1F1F1F"/>
-	<SolidColorBrush x:Key="SecundaryBackgroundColor" Color="#2D2F31"/>
-	<SolidColorBrush x:Key="TertiaryBackgroundColor" Color="#1C3254"/>
+	<SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#C0C9EA"/>
+	<SolidColorBrush x:Key="SecundaryBackgroundColor" Color="#EDF4FF"/>
+	<SolidColorBrush x:Key="TertiaryBackgroundColor" Color="#FFFFFF"/>
 
 	<!-- System Colors -->
 	<!-- Typograhy Colors -->
-	<SolidColorBrush x:Key="PrimaryTextColor" Color="#C0C9EA"/>
-	<SolidColorBrush x:Key="SecundaryTextColor" Color="#EDF4FF"/>
-	<SolidColorBrush x:Key="TertiaryTextColor" Color="#FFFFFF"/>
+	<SolidColorBrush x:Key="PrimaryTextColor" Color="#0E1A32"/>
+	<SolidColorBrush x:Key="SecundaryTextColor" Color="#102341"/>
+	<SolidColorBrush x:Key="TertiaryTextColor" Color="#1C3254"/>
 
 	<!-- Blue Colors-->
 	<SolidColorBrush x:Key="PrimaryBlueColor" Color="#004FC4"/>
@@ -51,5 +51,18 @@
 	<SolidColorBrush x:Key="PrimaryBlackColor" Color="#0E1A32"/>
 	<SolidColorBrush x:Key="SecundaryBlackColor" Color="#102341"/>
 	<SolidColorBrush x:Key="TertiaryBlackColor" Color="#1C3254"/>
+
+	<!-- Typograhy Colors -->
+	<SolidColorBrush x:Key="TextSecundaryColor" Color="#B0B7C3"/>
+	<SolidColorBrush x:Key="TextTertiaryColor" Color="#8A94A6"/>
+	<SolidColorBrush x:Key="TextFourthColor" Color="#4B5D78"/>
+
+	<!-- Icon Colors -->
+	<SolidColorBrush x:Key="PrimaryIconColor" Color="#B0B7C3"/>
+	<SolidColorBrush x:Key="SecundaryIconColor" Color="#8A94A6"/>
+	<SolidColorBrush x:Key="TertiarIconyColor" Color="#4B5D78"/>
+	<SolidColorBrush x:Key="FourthIconColor" Color="#323B4B"/>
+
+	<SolidColorBrush x:Key="btnClose" Color="#F72626"/>
 
 </ResourceDictionary>

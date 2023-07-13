@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF.Essential.Design.Elements.Themes;
 
 namespace WPF.Essential.Design.Elements
 {
@@ -66,122 +67,63 @@ namespace WPF.Essential.Design.Elements
 			Popup.IsOpen = false;
 		}
 
-		private void btnProducts_MouseEnter(object sender, MouseEventArgs e)
-		{
-			if (Tg_Btn.IsChecked == false)
-			{
-				Popup.PlacementTarget = btnProducts;
-				Popup.Placement = PlacementMode.Right;
-				Popup.IsOpen = true;
-				Header.PopupText.Text = "Products";
-			}
-		}
-
-		private void btnProducts_MouseLeave(object sender, MouseEventArgs e)
-		{
-			Popup.Visibility = Visibility.Collapsed;
-			Popup.IsOpen = false;
-		}
-
 		private void btnProductStock_MouseEnter(object sender, MouseEventArgs e)
 		{
-			if (Tg_Btn.IsChecked == false)
-			{
-				Popup.PlacementTarget = btnProductStock;
-				Popup.Placement = PlacementMode.Right;
-				Popup.IsOpen = true;
-				Header.PopupText.Text = "Product Stock";
-			}
+			
 		}
 
 		private void btnProductStock_MouseLeave(object sender, MouseEventArgs e)
 		{
-			Popup.Visibility = Visibility.Collapsed;
-			Popup.IsOpen = false;
+
 		}
 
 		private void btnOrderList_MouseEnter(object sender, MouseEventArgs e)
 		{
-			if (Tg_Btn.IsChecked == false)
-			{
-				Popup.PlacementTarget = btnOrderList;
-				Popup.Placement = PlacementMode.Right;
-				Popup.IsOpen = true;
-				Header.PopupText.Text = "Order List";
-			}
+
 		}
 
 		private void btnOrderList_MouseLeave(object sender, MouseEventArgs e)
 		{
-			Popup.Visibility = Visibility.Collapsed;
-			Popup.IsOpen = false;
+
 		}
 
 		private void btnBilling_MouseEnter(object sender, MouseEventArgs e)
 		{
-			if (Tg_Btn.IsChecked == false)
-			{
-				Popup.PlacementTarget = btnBilling;
-				Popup.Placement = PlacementMode.Right;
-				Popup.IsOpen = true;
-				Header.PopupText.Text = "Billing";
-			}
+
 		}
 
 		private void btnBilling_MouseLeave(object sender, MouseEventArgs e)
 		{
-			Popup.Visibility = Visibility.Collapsed;
-			Popup.IsOpen = false;
+
 		}
 
 		private void btnPointOfSale_MouseEnter(object sender, MouseEventArgs e)
 		{
-			if (Tg_Btn.IsChecked == false)
-			{
-				Popup.PlacementTarget = btnPointOfSale;
-				Popup.Placement = PlacementMode.Right;
-				Popup.IsOpen = true;
-				Header.PopupText.Text = "Poin Of Sale";
-			}
+
 		}
 
 		private void btnPointOfSale_MouseLeave(object sender, MouseEventArgs e)
 		{
-			Popup.Visibility = Visibility.Collapsed;
-			Popup.IsOpen = false;
+
 		}
 
 		private void btnSecurity_MouseEnter(object sender, MouseEventArgs e)
 		{
-			if (Tg_Btn.IsChecked == false)
-			{
-				Popup.PlacementTarget = btnSecurity;
-				Popup.Placement = PlacementMode.Right;
-				Popup.IsOpen = true;
-				Header.PopupText.Text = "Security";
-			}
+
 		}
 
 		private void btnSecurity_MouseLeave(object sender, MouseEventArgs e)
 		{
-			Popup.Visibility = Visibility.Collapsed;
-			Popup.IsOpen = false;
+
 		}
 		private void btnSetting_MouseEnter(object sender, MouseEventArgs e)
 		{
-			if (Tg_Btn.IsChecked == false)
-			{
-				Popup.PlacementTarget = btnSetting;
-				Popup.Placement = PlacementMode.Right;
-				Popup.IsOpen = true;
-				Header.PopupText.Text = "Setting";
-			}
+
 		}
 
 		private void btnSetting_MouseLeave(object sender, MouseEventArgs e)
 		{
-			Popup.Visibility = Visibility.Collapsed;
-			Popup.IsOpen = false;
+
 		}
 		// End: MenuLeft PopupButton //
 
@@ -213,6 +155,151 @@ namespace WPF.Essential.Design.Elements
 		private void btnDashboard_Click(object sender, RoutedEventArgs e)
 		{
 			fContainer.Navigate(new System.Uri("Pages/Dashboard.xaml", UriKind.RelativeOrAbsolute));
+		}
+
+		private void chips_MouseEnter(object sender, MouseEventArgs e)
+		{
+			if (Tg_Btn.IsChecked == false)
+			{
+				Popup.PlacementTarget = btnProducts;
+				Popup.Placement = PlacementMode.Right;
+				Popup.IsOpen = true;
+				Header.PopupText.Text = "Products";
+			}
+		}
+
+		private void chips_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Popup.Visibility = Visibility.Collapsed;
+			Popup.IsOpen = false;
+		}
+
+		private void toggle_MouseEnter(object sender, MouseEventArgs e)
+		{
+			if (Tg_Btn.IsChecked == false)
+			{
+				Popup.PlacementTarget = btnProductStock;
+				Popup.Placement = PlacementMode.Right;
+				Popup.IsOpen = true;
+				Header.PopupText.Text = "Product Stock";
+			}
+		}
+
+		private void toggle_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Popup.Visibility = Visibility.Collapsed;
+			Popup.IsOpen = false;
+		}
+
+		private void tabs_MouseEnter(object sender, MouseEventArgs e)
+		{
+			if (Tg_Btn.IsChecked == false)
+			{
+				Popup.PlacementTarget = btnOrderList;
+				Popup.Placement = PlacementMode.Right;
+				Popup.IsOpen = true;
+				Header.PopupText.Text = "Order List";
+			}
+		}
+
+		private void tabs_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Popup.Visibility = Visibility.Collapsed;
+			Popup.IsOpen = false;
+		}
+
+		private void slider_MouseEnter(object sender, MouseEventArgs e)
+		{
+			if (Tg_Btn.IsChecked == false)
+			{
+				Popup.PlacementTarget = btnBilling;
+				Popup.Placement = PlacementMode.Right;
+				Popup.IsOpen = true;
+				Header.PopupText.Text = "Billing";
+			}
+		}
+
+		private void slider_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Popup.Visibility = Visibility.Collapsed;
+			Popup.IsOpen = false;
+		}
+
+		private void ratingbar_MouseEnter(object sender, MouseEventArgs e)
+		{
+			if (Tg_Btn.IsChecked == false)
+			{
+				Popup.PlacementTarget = btnPointOfSale;
+				Popup.Placement = PlacementMode.Right;
+				Popup.IsOpen = true;
+				Header.PopupText.Text = "Poin Of Sale";
+			}
+		}
+
+		private void ratingbar_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Popup.Visibility = Visibility.Collapsed;
+			Popup.IsOpen = false;
+		}
+
+		private void combobox_MouseEnter(object sender, MouseEventArgs e)
+		{
+			if (Tg_Btn.IsChecked == false)
+			{
+				Popup.PlacementTarget = btnSecurity;
+				Popup.Placement = PlacementMode.Right;
+				Popup.IsOpen = true;
+				Header.PopupText.Text = "Security";
+			}
+		}
+
+		private void combobox_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Popup.Visibility = Visibility.Collapsed;
+			Popup.IsOpen = false;
+		}
+
+		private void fields_MouseEnter(object sender, MouseEventArgs e)
+		{
+			if (Tg_Btn.IsChecked == false)
+			{
+				Popup.PlacementTarget = btnSetting;
+				Popup.Placement = PlacementMode.Right;
+				Popup.IsOpen = true;
+				Header.PopupText.Text = "Setting";
+			}
+		}
+
+		private void fields_MouseLeave(object sender, MouseEventArgs e)
+		{
+			Popup.Visibility = Visibility.Collapsed;
+			Popup.IsOpen = false;
+		}
+
+		private bool _isDarkTheme = false;
+		public bool IsDarkTheme
+		{
+			get { return _isDarkTheme; }
+			set
+			{
+				_isDarkTheme = value;
+				UpdateTheme();
+			}
+		}
+
+		private void UpdateTheme()
+		{
+			var dictionary = new ResourceDictionary();
+			dictionary.Source = new Uri(IsDarkTheme ? "DarkTheme.xaml" : "LightTheme.xaml", UriKind.Relative);
+			Application.Current.Resources.MergedDictionaries[0] = dictionary;
+		}
+
+		private void Themes_Click(object sender, RoutedEventArgs e)
+		{
+			if (Themes.IsChecked == true)
+				ThemeController.SetTheme(ThemeController.ThemeTypes.Dark);
+			else
+				ThemeController.SetTheme(ThemeController.ThemeTypes.Light);
 		}
 	}
 }
