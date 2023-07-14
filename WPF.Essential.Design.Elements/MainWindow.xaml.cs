@@ -259,7 +259,7 @@ namespace WPF.Essential.Design.Elements
                 animation.From = 0;
                 animation.To = -90;
                 animation.RepeatBehavior = new RepeatBehavior(1);
-                animation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+                animation.Duration = new Duration(TimeSpan.FromSeconds(0.3));
 
                 Storyboard storyboard = new Storyboard();
                 storyboard.Children.Add(animation);
@@ -274,7 +274,7 @@ namespace WPF.Essential.Design.Elements
                 animation.From = -90;
                 animation.To = 0;
                 animation.RepeatBehavior = new RepeatBehavior(1);
-                animation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+                animation.Duration = new Duration(TimeSpan.FromSeconds(0.3));
 
                 Storyboard storyboard = new Storyboard();
                 storyboard.Children.Add(animation);
@@ -284,5 +284,37 @@ namespace WPF.Essential.Design.Elements
                 storyboard.Begin(this);
             }
         }
-    }
+
+		private void btnSetting_Click(object sender, RoutedEventArgs e)
+		{
+			topBar.Visibility = Visibility.Visible;
+
+			// Create the DoubleAnimationUsingKeyFrames object
+			DoubleAnimationUsingKeyFrames animation = new DoubleAnimationUsingKeyFrames();
+			animation.Duration = new Duration(TimeSpan.FromSeconds(0.3));
+			animation.AutoReverse = false;
+			animation.RepeatBehavior = new RepeatBehavior(1);
+
+			// Create the EasingDoubleKeyFrames
+			EasingDoubleKeyFrame keyFrame1 = new EasingDoubleKeyFrame();
+			keyFrame1.KeyTime = KeyTime.FromTimeSpan(TimeSpan.Zero);
+			keyFrame1.Value = -topBar.ActualHeight;
+			EasingDoubleKeyFrame keyFrame2 = new EasingDoubleKeyFrame();
+			keyFrame2.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromSeconds(0.3));
+			keyFrame2.Value = 0;
+			animation.KeyFrames.Add(keyFrame1);
+			animation.KeyFrames.Add(keyFrame2);
+
+			// Create the Storyboard object
+			Storyboard sb = new Storyboard();
+			sb.Children.Add(animation);
+			//sb.Completed += SlideDownStoryboard_Completed;
+
+			// Start the storyboard on the topBar Grid
+			topBar.RenderTransform = new TranslateTransform();
+			Storyboard.SetTargetProperty(animation, new PropertyPath("(UIElement.RenderTransform).(TranslateTransform.Y)"));
+			Storyboard.SetTarget(animation, topBar);
+			sb.Begin();
+		}
+	}
 }

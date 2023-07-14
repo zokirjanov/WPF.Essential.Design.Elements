@@ -73,7 +73,7 @@
                         <Button x:Name="btnSecurity" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="combobox_MouseEnter" MouseLeave="combobox_MouseLeave">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource combobox}" IconWidth="16" Text="ComboBoxes" VerticalAlignment="Center"/>
                         </Button>
-                        <Button x:Name="btnSetting" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="fields_MouseEnter" MouseLeave="fields_MouseLeave">
+                        <Button x:Name="btnSetting" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="fields_MouseEnter" MouseLeave="fields_MouseLeave" Click="btnSetting_Click">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource fields}" IconWidth="16" Text="Fields" VerticalAlignment="Center"/>
                         </Button>
 
@@ -104,17 +104,17 @@
             </Border>
 
             <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="60"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
 
-                <ToggleButton x:Name="Tg_Btn" Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource iToggleButtonStyle}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="10,15,0,15" Height="30" Width="30" Click="Tg_Btn_Click">
+				<ToggleButton x:Name="Tg_Btn" Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource iToggleButtonStyle}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="10,15,0,15" Height="30" Width="30" Click="Tg_Btn_Click">
                     <ToggleButton.Triggers>
                         <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                             <BeginStoryboard>
                                 <Storyboard x:Name="HideStackPanel">
-                                    <DoubleAnimation Storyboard.TargetName="GridNav" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="210" To="60" Duration="0:0:0.5">
+                                    <DoubleAnimation Storyboard.TargetName="GridNav" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="210" To="60" Duration="0:0:0.3">
                                     </DoubleAnimation>
                                 </Storyboard>
                             </BeginStoryboard>
@@ -122,7 +122,7 @@
                         <EventTrigger RoutedEvent="ToggleButton.Checked">
                             <BeginStoryboard>
                                 <Storyboard x:Name="ShowStackPanel">
-                                    <DoubleAnimation Storyboard.TargetName="GridNav" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="60" To="210" Duration="0:0:0.5">
+                                    <DoubleAnimation Storyboard.TargetName="GridNav" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="60" To="210" Duration="0:0:0.3">
                                     </DoubleAnimation>
                                 </Storyboard>
                             </BeginStoryboard>
@@ -155,8 +155,23 @@
                        NavigationUIVisibility="Hidden">
                     
                 </Frame>
-                
-            </Grid>
+
+				<Grid x:Name="topBar" Grid.Row="0" Grid.RowSpan="2" Background="Beige" Opacity="0.1" Visibility="Collapsed">
+					<Grid.RenderTransform>
+						<TranslateTransform/>
+					</Grid.RenderTransform>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+						<Border Grid.Row="0" Background="Black" CornerRadius="0 0 8 8">
+
+						</Border>
+					</Grid>
+				</Grid>
+
+			</Grid>
       
 
 
