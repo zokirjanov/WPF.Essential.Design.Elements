@@ -287,7 +287,7 @@ namespace WPF.Essential.Design.Elements
 
 		private void btnSetting_Click(object sender, RoutedEventArgs e)
 		{
-			topBar.Visibility = Visibility.Visible;
+			topbarParent.Visibility = Visibility.Visible;
 
 			// Create the DoubleAnimationUsingKeyFrames object
 			DoubleAnimationUsingKeyFrames animation = new DoubleAnimationUsingKeyFrames();

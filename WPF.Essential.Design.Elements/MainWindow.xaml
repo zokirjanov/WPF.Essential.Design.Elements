@@ -156,21 +156,20 @@
                     
                 </Frame>
 
-				<Grid x:Name="topBar" Grid.Row="0" Grid.RowSpan="2" Background="Beige" Opacity="0.1" Visibility="Collapsed">
-					<Grid.RenderTransform>
-						<TranslateTransform/>
-					</Grid.RenderTransform>
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="*"/>
-							<RowDefinition Height="*"/>
-						</Grid.RowDefinitions>
-						<Border Grid.Row="0" Background="Black" CornerRadius="0 0 8 8">
-
-						</Border>
+				<Grid Grid.Row="0" x:Name="topbarParent" Background="Gray"  Grid.RowSpan="2"  Visibility="Collapsed">
+					<Grid x:Name="topBar" >
+						<Grid.RenderTransform>
+							<TranslateTransform/>
+						</Grid.RenderTransform>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<Border Grid.Row="0" Background="Black" Opacity="10" CornerRadius="0 0 8 8"></Border>
+						</Grid>
 					</Grid>
 				</Grid>
-
 			</Grid>
       
 
