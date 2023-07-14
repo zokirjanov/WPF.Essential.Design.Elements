@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -297,9 +298,10 @@ namespace WPF.Essential.Design.Elements
 		private void Themes_Click(object sender, RoutedEventArgs e)
 		{
 			if (Themes.IsChecked == true)
-				ThemeController.SetTheme(ThemeController.ThemeTypes.Dark);
-			else
 				ThemeController.SetTheme(ThemeController.ThemeTypes.Light);
+			else
+				ThemeController.SetTheme(ThemeController.ThemeTypes.Dark);
 		}
-	}
+
+    }
 }

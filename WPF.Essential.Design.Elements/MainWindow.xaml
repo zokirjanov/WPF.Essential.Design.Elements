@@ -77,18 +77,17 @@
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource fields}" IconWidth="16" Text="Fields" VerticalAlignment="Center"/>
                         </Button>
 
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-							<Path Data="{DynamicResource sun}" Height="16" Width="16" Stretch="UniformToFill" Fill="{DynamicResource PrimaryYellowColor}" VerticalAlignment="Center"/>
-							<ToggleButton x:Name="Themes"
-                                  IsChecked="False"
-                                  Click="Themes_Click"
-                                  HorizontalAlignment="Right"
-                                  Style="{DynamicResource ToggleButtonStyle}"
-                                  Margin="10 0 10 0"/>
-							<Path Data="{DynamicResource moon}" Height="16" Width="16" Stretch="Fill" Fill="{DynamicResource PrimaryWhiteColor}" VerticalAlignment="Center"/>
-						</StackPanel>
-						
-					</StackPanel>
+                        <StackPanel x:Name="PanelToSpin" Orientation="Vertical" HorizontalAlignment="Center">
+                            <Path Data="{DynamicResource sun}" Height="16" Width="16" Stretch="UniformToFill" Fill="{DynamicResource PrimaryYellowColor}" VerticalAlignment="Center"/>
+                            <ToggleButton x:Name="Themes" IsChecked="False" Click="Themes_Click"  HorizontalAlignment="Right" Style="{DynamicResource ToggleButtonStyle}" Margin="10 10 10 10">
+                                <ToggleButton.LayoutTransform>
+                                    <RotateTransform Angle="-90" />
+                                </ToggleButton.LayoutTransform>
+                            </ToggleButton>
+                            <Path Data="{DynamicResource moon}" Height="16" Width="16" Stretch="Fill" Fill="{DynamicResource PrimaryWhiteColor}" VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                    </StackPanel>
                     <!-- End: MenuItem -->
                     
                     <!-- Start: Popup User Control -->
