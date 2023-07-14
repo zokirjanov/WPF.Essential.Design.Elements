@@ -269,7 +269,7 @@ namespace WPF.Essential.Design.Elements
 				Popup.IsOpen = true;
 				Header.PopupText.Text = "Setting";
 			}
-		}
+        }
 
 		private void fields_MouseLeave(object sender, MouseEventArgs e)
 		{
@@ -303,5 +303,38 @@ namespace WPF.Essential.Design.Elements
 				ThemeController.SetTheme(ThemeController.ThemeTypes.Dark);
 		}
 
+        private void Tg_Btn_Click(object sender, RoutedEventArgs e)
+        {
+			if(Tg_Btn.IsChecked == true)
+			{
+                DoubleAnimation animation = new DoubleAnimation();
+                animation.From = 0;
+                animation.To = 90;
+                animation.RepeatBehavior = new RepeatBehavior(1);
+                animation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+
+                Storyboard storyboard = new Storyboard();
+                storyboard.Children.Add(animation);
+                Storyboard.SetTargetName(animation, "PanelRotation");
+                Storyboard.SetTargetProperty(animation, new PropertyPath("Angle"));
+
+                storyboard.Begin(this);
+            }
+			else
+			{
+                DoubleAnimation animation = new DoubleAnimation();
+                animation.From = 90;
+                animation.To = -0;
+                animation.RepeatBehavior = new RepeatBehavior(1);
+                animation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
+
+                Storyboard storyboard = new Storyboard();
+                storyboard.Children.Add(animation);
+                Storyboard.SetTargetName(animation, "PanelRotation");
+                Storyboard.SetTargetProperty(animation, new PropertyPath("Angle"));
+
+                storyboard.Begin(this);
+            }
+        }
     }
 }

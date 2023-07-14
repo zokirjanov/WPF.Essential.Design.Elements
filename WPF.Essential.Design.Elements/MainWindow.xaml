@@ -77,16 +77,20 @@
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource fields}" IconWidth="16" Text="Fields" VerticalAlignment="Center"/>
                         </Button>
 
-                        <StackPanel x:Name="PanelToSpin" Orientation="Vertical" HorizontalAlignment="Center">
-                            <Path Data="{DynamicResource sun}" Height="16" Width="16" Stretch="UniformToFill" Fill="{DynamicResource PrimaryYellowColor}" VerticalAlignment="Center"/>
-                            <ToggleButton x:Name="Themes" IsChecked="False" Click="Themes_Click"  HorizontalAlignment="Right" Style="{DynamicResource ToggleButtonStyle}" Margin="10 10 10 10">
-                                <ToggleButton.LayoutTransform>
-                                    <RotateTransform Angle="-90" />
-                                </ToggleButton.LayoutTransform>
-                            </ToggleButton>
-                            <Path Data="{DynamicResource moon}" Height="16" Width="16" Stretch="Fill" Fill="{DynamicResource PrimaryWhiteColor}" VerticalAlignment="Center"/>
-                        </StackPanel>
-
+                        <Grid>
+                            <StackPanel x:Name="PanelToSpin" Orientation="Vertical" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                                <StackPanel.RenderTransform>
+                                    <RotateTransform x:Name="PanelRotation" Angle="0"/>
+                                </StackPanel.RenderTransform>
+                                <Path Data="{DynamicResource sun}" Height="16" Width="16" Stretch="UniformToFill" Fill="{DynamicResource PrimaryYellowColor}" VerticalAlignment="Center"/>
+                                <ToggleButton x:Name="Themes" IsChecked="False" Click="Themes_Click"  HorizontalAlignment="Right" Style="{DynamicResource ToggleButtonStyle}" Margin="10 10 10 10">
+                                    <ToggleButton.LayoutTransform>
+                                        <RotateTransform Angle="-90" />
+                                    </ToggleButton.LayoutTransform>
+                                </ToggleButton>
+                                <Path Data="{DynamicResource moon}" Height="16" Width="16" Stretch="Fill" Fill="{DynamicResource PrimaryWhiteColor}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Grid>
                     </StackPanel>
                     <!-- End: MenuItem -->
                     
@@ -105,7 +109,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <ToggleButton x:Name="Tg_Btn" Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource iToggleButtonStyle}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="10,15,0,15" Height="30" Width="30">
+                <ToggleButton x:Name="Tg_Btn" Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource iToggleButtonStyle}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="10,15,0,15" Height="30" Width="30" Click="Tg_Btn_Click">
                     <ToggleButton.Triggers>
                         <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                             <BeginStoryboard>
