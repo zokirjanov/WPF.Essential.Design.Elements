@@ -257,7 +257,7 @@ namespace WPF.Essential.Design.Elements
 			{
                 DoubleAnimation animation = new DoubleAnimation();
                 animation.From = 0;
-                animation.To = 90;
+                animation.To = -90;
                 animation.RepeatBehavior = new RepeatBehavior(1);
                 animation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
 
@@ -271,8 +271,8 @@ namespace WPF.Essential.Design.Elements
 			else
 			{
                 DoubleAnimation animation = new DoubleAnimation();
-                animation.From = 90;
-                animation.To = -0;
+                animation.From = -90;
+                animation.To = 0;
                 animation.RepeatBehavior = new RepeatBehavior(1);
                 animation.Duration = new Duration(TimeSpan.FromSeconds(0.5));
 
