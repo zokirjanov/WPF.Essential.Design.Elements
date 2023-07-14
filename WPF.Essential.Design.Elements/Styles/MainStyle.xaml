@@ -120,8 +120,8 @@
 
 	<!-- Start: ToggleButtonStyle -->
 	<Style x:Key="ToggleButtonStyle" TargetType="{x:Type ToggleButton}">
-		<Setter Property="Background" Value="{DynamicResource SecundaryWhiteColor}"/>
-		<Setter Property="BorderBrush" Value="{DynamicResource PrimaryWhiteColor}"/>
+        <Setter Property="Background" Value="{DynamicResource PrimaryIconColor}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TertiarIconyColor}"/>
 		<Setter Property="Height" Value="20"/>
 		<Setter Property="Width" Value="35"/>
 		<Setter Property="MaxHeight" Value="20"/>
@@ -187,10 +187,10 @@
 						<Trigger Property="IsChecked" Value="True">
 							<Setter TargetName="Ellipse"
                                     Property="Fill"
-                                    Value="{DynamicResource SecundaryBlueColor}"/>
+                                    Value="{DynamicResource SecundaryTealColor}"/>
 							<Setter TargetName="Ellipse"
                                    Property="Stroke"
-                                   Value="{DynamicResource PrimaryTextColor}"/>
+                                   Value="{DynamicResource TertiaryBlueColor}"/>
 						</Trigger>
 					</ControlTemplate.Triggers>
 				</ControlTemplate>

@@ -68,64 +68,7 @@ namespace WPF.Essential.Design.Elements
 			Popup.IsOpen = false;
 		}
 
-		private void btnProductStock_MouseEnter(object sender, MouseEventArgs e)
-		{
-			
-		}
-
-		private void btnProductStock_MouseLeave(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnOrderList_MouseEnter(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnOrderList_MouseLeave(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnBilling_MouseEnter(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnBilling_MouseLeave(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnPointOfSale_MouseEnter(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnPointOfSale_MouseLeave(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnSecurity_MouseEnter(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnSecurity_MouseLeave(object sender, MouseEventArgs e)
-		{
-
-		}
-		private void btnSetting_MouseEnter(object sender, MouseEventArgs e)
-		{
-
-		}
-
-		private void btnSetting_MouseLeave(object sender, MouseEventArgs e)
-		{
-
-		}
+		
 		// End: MenuLeft PopupButton //
 
 		// Start: Button Close | Restore | Minimize 
@@ -277,6 +220,11 @@ namespace WPF.Essential.Design.Elements
 			Popup.IsOpen = false;
 		}
 
+
+
+		/// <summary>
+		/// /////////	Theme Modes
+		/// </summary>
 		private bool _isDarkTheme = false;
 		public bool IsDarkTheme
 		{
