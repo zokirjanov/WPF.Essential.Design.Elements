@@ -287,7 +287,7 @@ namespace WPF.Essential.Design.Elements
 
 		private void btnSetting_Click(object sender, RoutedEventArgs e)
 		{
-			topbarParent.Visibility = Visibility.Visible;
+			//topbarParent.Visibility = Visibility.Visible;
 
 			// Create the DoubleAnimationUsingKeyFrames object
 			DoubleAnimationUsingKeyFrames animation = new DoubleAnimationUsingKeyFrames();
@@ -315,6 +315,42 @@ namespace WPF.Essential.Design.Elements
 			Storyboard.SetTargetProperty(animation, new PropertyPath("(UIElement.RenderTransform).(TranslateTransform.Y)"));
 			Storyboard.SetTarget(animation, topBar);
 			sb.Begin();
+		}
+
+		private void ToggleButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (barToggle.IsChecked == true)
+			{
+				var storyboard = new Storyboard();
+				var doubleAnimation = new DoubleAnimation
+				{
+					From = 0,
+					To = 300,
+					Duration = TimeSpan.FromSeconds(0.3),
+					EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+				};
+				Storyboard.SetTargetName(doubleAnimation, "topBar");
+				Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(FrameworkElement.HeightProperty));
+				storyboard.Children.Add(doubleAnimation);
+
+				storyboard.Begin(topBar);
+			}
+			else
+			{
+				var storyboard = new Storyboard();
+				var doubleAnimation = new DoubleAnimation
+				{
+					From = 300,
+					To = 0,
+					Duration = TimeSpan.FromSeconds(0.3),
+					EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+				};
+				Storyboard.SetTargetName(doubleAnimation, "topBar");
+				Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(FrameworkElement.HeightProperty));
+				storyboard.Children.Add(doubleAnimation);
+
+				storyboard.Begin(topBar);
+			}
 		}
 	}
 }
