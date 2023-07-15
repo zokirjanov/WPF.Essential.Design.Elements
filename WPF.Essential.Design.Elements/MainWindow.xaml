@@ -148,15 +148,14 @@
                     <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
                 </StackPanel>
                 <!-- End: Button Close | Restore | Minimize -->
-                
-                <Frame Grid.Row="1"
-                       Name="fContainer"
-                       Margin="20"
-                       NavigationUIVisibility="Hidden">
-                    
-                </Frame>
 
-				<Grid Grid.Row="0" x:Name="topbarParent" Background="Gray"  Grid.RowSpan="2"  Visibility="Collapsed">
+				<Frame Grid.Row="1"
+                       Name="fContainer"
+                       Margin="0"
+                       NavigationUIVisibility="Hidden">
+				</Frame>
+
+				<Grid Grid.Row="1" x:Name="topbarParent" Background="Gray"  Grid.RowSpan="2"  Visibility="Collapsed">
 					<Grid x:Name="topBar" >
 						<Grid.RenderTransform>
 							<TranslateTransform/>
@@ -166,7 +165,7 @@
 								<RowDefinition Height="*"/>
 								<RowDefinition Height="*"/>
 							</Grid.RowDefinitions>
-							<Border Grid.Row="0" Background="Black" Opacity="10" CornerRadius="0 0 8 8"></Border>
+							<Border Grid.Row="0" Background="{DynamicResource PrimaryBackgroundColor}" Opacity="10" CornerRadius="0 0 8 8"></Border>
 						</Grid>
 					</Grid>
 				</Grid>
