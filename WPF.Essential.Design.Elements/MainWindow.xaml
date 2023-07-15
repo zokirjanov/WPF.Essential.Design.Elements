@@ -21,7 +21,9 @@
 
 			<Border Grid.Column="0"
                     Background="{DynamicResource SecundaryBackgroundColor}"
-                    CornerRadius="8 0 0 8">
+                    CornerRadius="8 0 0 8"
+					BorderBrush="#444746"
+					BorderThickness="0 0 1 0">
 				<Grid x:Name="GridNav" Width="60">
 					<Grid.RowDefinitions>
 						<RowDefinition Height="60"/>
@@ -153,16 +155,14 @@
 				<!-- End: Button Close | Restore | Minimize -->
 
 				<Frame Grid.Row="1"
-					   Background="Red"
+					   Background="{DynamicResource SecundaryBackgroundColor}"
                        Name="fContainer"
                        Margin="0"
                        NavigationUIVisibility="Hidden">
 				</Frame>
 
-				<Grid Grid.Row="1" x:Name="topBar" Background="Transparent"  Grid.RowSpan="2"  Visibility="Visible" VerticalAlignment="Top" Height="0">
-					<Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="0 0 8 8">
-
-					</Border>
+				<Grid Grid.Row="1" x:Name="topBar" Background="Transparent" Visibility="Visible" VerticalAlignment="Top" Height="0" Margin="0">
+					<Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="0 0 8 8"/>
 				</Grid>
 			</Grid>
 
