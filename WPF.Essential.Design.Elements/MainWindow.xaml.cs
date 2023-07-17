@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,11 @@ namespace WPF.Essential.Design.Elements
 		{
 			InitializeComponent();
 		}
+
+
+
+
+
 
 		private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
