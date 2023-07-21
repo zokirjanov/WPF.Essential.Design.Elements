@@ -21,13 +21,8 @@ using WPF.Essential.Design.Elements.Themes;
 
 namespace WPF.Essential.Design.Elements
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
 	public partial class MainWindow : Window
 	{
-		public MainWindow _parent => this;
-
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -98,7 +93,8 @@ namespace WPF.Essential.Design.Elements
 
 		private void btnHome_Click(object sender, RoutedEventArgs e)
 		{
-			fContainer.Navigate(new System.Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
+			Home home = new Home(this);
+			fContainer.Navigate(home);
 		}
 
 		private void btnDashboard_Click(object sender, RoutedEventArgs e)
@@ -357,13 +353,41 @@ namespace WPF.Essential.Design.Elements
 				storyboard.Begin(topBar);
 			}
 		}
+
+
 		public  void Openbar()
 		{
-			this.barToggle.IsChecked = true;
+			var storyboard = new Storyboard();
+			var doubleAnimation = new DoubleAnimation
+			{
+				From = 0,
+				To = 300,
+				Duration = TimeSpan.FromSeconds(0.3),
+				EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+			};
+			Storyboard.SetTargetName(doubleAnimation, "topBar");
+			Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(FrameworkElement.HeightProperty));
+			storyboard.Children.Add(doubleAnimation);
+
+			storyboard.Begin(topBar);
 		}
 		public  void Closebar()
 		{
-			this.barToggle.IsChecked = false;
+			var storyboard = new Storyboard();
+			var doubleAnimation = new DoubleAnimation
+			{
+				From = 300,
+				To = 0,
+				Duration = TimeSpan.FromSeconds(0.3),
+				EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+			};
+			Storyboard.SetTargetName(doubleAnimation, "topBar");
+			Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(FrameworkElement.HeightProperty));
+			storyboard.Children.Add(doubleAnimation);
+
+			storyboard.Begin(topBar);
+
+
 		}
 	}
 }

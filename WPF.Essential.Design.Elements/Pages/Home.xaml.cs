@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,20 +21,19 @@ namespace WPF.Essential.Design.Elements.Pages
 	/// </summary>
 	public partial class Home : Page
 	{
-		private MainWindow _parent;
-		public Home( )
+		MainWindow _parent;
+		public Home(MainWindow parent)
 		{
 			InitializeComponent();
+			_parent = parent;
 		}
 
 
 
 		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{
-
 			_parent.Openbar();
 			this.blurFon.Visibility = Visibility.Visible;
-
 		}
 
 		private void blurFon_MouseDown(object sender, MouseButtonEventArgs e)

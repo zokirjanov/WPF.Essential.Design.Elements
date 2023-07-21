@@ -9,7 +9,7 @@
       Title="Home">
 
 	<Grid>
-		<Border  Background="#1F1F1F">
+		<Border  Background="#3A3A3A">
 			<Grid>
 				<TextBlock Text="Home" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
