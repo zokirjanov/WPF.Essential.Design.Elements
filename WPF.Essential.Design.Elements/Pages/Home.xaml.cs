@@ -20,9 +20,26 @@ namespace WPF.Essential.Design.Elements.Pages
 	/// </summary>
 	public partial class Home : Page
 	{
-		public Home()
+		private MainWindow _parent;
+		public Home( )
 		{
 			InitializeComponent();
+		}
+
+
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+
+			_parent.Openbar();
+			this.blurFon.Visibility = Visibility.Visible;
+
+		}
+
+		private void blurFon_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			_parent.Closebar();
+			this.blurFon.Visibility = Visibility.Collapsed;
 		}
 	}
 }

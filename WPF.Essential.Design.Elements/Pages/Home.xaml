@@ -8,8 +8,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Home">
 
-	<Border  Background="#1F1F1F">
-		<TextBlock Text="Home" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"
+	<Grid>
+		<Border  Background="#1F1F1F">
+			<Grid>
+				<TextBlock Text="Home" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
-	</Border>
+				<Button Height="50" Width="200" Margin="0 100 0 0" Click="Button_Click_1"></Button>
+			</Grid>
+		</Border>
+		<Grid x:Name="blurFon" Background="Red" Visibility="Collapsed" Opacity="0.2" MouseDown="blurFon_MouseDown" >
+			<Grid.Effect>
+				<BlurEffect Radius="0" KernelType="Gaussian"/>
+			</Grid.Effect>
+
+			<!-- Your content here -->
+		</Grid>
+	</Grid>
 </Page>

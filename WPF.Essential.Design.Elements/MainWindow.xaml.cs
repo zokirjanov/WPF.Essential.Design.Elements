@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF.Essential.Design.Elements.Controls;
+using WPF.Essential.Design.Elements.Pages;
 using WPF.Essential.Design.Elements.Themes;
 
 namespace WPF.Essential.Design.Elements
@@ -23,6 +26,8 @@ namespace WPF.Essential.Design.Elements
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		public MainWindow _parent => this;
+
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -74,7 +79,7 @@ namespace WPF.Essential.Design.Elements
 		// Start: Button Close | Restore | Minimize 
 		private void btnClose_Click(object sender, RoutedEventArgs e)
 		{
-			Close();
+			Application.Current.Shutdown();
 		}
 
 		private void btnRestore_Click(object sender, RoutedEventArgs e)
@@ -317,7 +322,7 @@ namespace WPF.Essential.Design.Elements
 			sb.Begin();
 		}
 
-		private void ToggleButton_Click(object sender, RoutedEventArgs e)
+		public void ToggleButton_Click(object sender, RoutedEventArgs e)
 		{
 			if (barToggle.IsChecked == true)
 			{
@@ -351,6 +356,14 @@ namespace WPF.Essential.Design.Elements
 
 				storyboard.Begin(topBar);
 			}
+		}
+		public  void Openbar()
+		{
+			this.barToggle.IsChecked = true;
+		}
+		public  void Closebar()
+		{
+			this.barToggle.IsChecked = false;
 		}
 	}
 }
