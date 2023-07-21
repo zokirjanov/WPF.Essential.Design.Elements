@@ -30,10 +30,6 @@ namespace WPF.Essential.Design.Elements
 		}
 
 
-
-
-
-
 		private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 		{
 			Tg_Btn.IsChecked = false;
@@ -105,6 +101,7 @@ namespace WPF.Essential.Design.Elements
 
 		private void btnDashboard_Click(object sender, RoutedEventArgs e)
 		{
+			Closebar();
 			fContainer.Navigate(new System.Uri("Pages/Dashboard.xaml", UriKind.RelativeOrAbsolute));
 		}
 
@@ -258,6 +255,8 @@ namespace WPF.Essential.Design.Elements
 				ThemeController.SetTheme(ThemeController.ThemeTypes.Dark);
 		}
 
+
+
         private void Tg_Btn_Click(object sender, RoutedEventArgs e)
         {
 			if(Tg_Btn.IsChecked == true)
@@ -294,39 +293,12 @@ namespace WPF.Essential.Design.Elements
 
 		private void btnSetting_Click(object sender, RoutedEventArgs e)
 		{
-			//topbarParent.Visibility = Visibility.Visible;
-
-			// Create the DoubleAnimationUsingKeyFrames object
-			DoubleAnimationUsingKeyFrames animation = new DoubleAnimationUsingKeyFrames();
-			animation.Duration = new Duration(TimeSpan.FromSeconds(0.3));
-			animation.AutoReverse = false;
-			animation.RepeatBehavior = new RepeatBehavior(1);
-
-			// Create the EasingDoubleKeyFrames
-			EasingDoubleKeyFrame keyFrame1 = new EasingDoubleKeyFrame();
-			keyFrame1.KeyTime = KeyTime.FromTimeSpan(TimeSpan.Zero);
-			keyFrame1.Value = -topBar.ActualHeight;
-			EasingDoubleKeyFrame keyFrame2 = new EasingDoubleKeyFrame();
-			keyFrame2.KeyTime = KeyTime.FromTimeSpan(TimeSpan.FromSeconds(0.3));
-			keyFrame2.Value = 0;
-			animation.KeyFrames.Add(keyFrame1);
-			animation.KeyFrames.Add(keyFrame2);
-
-			// Create the Storyboard object
-			Storyboard sb = new Storyboard();
-			sb.Children.Add(animation);
-			//sb.Completed += SlideDownStoryboard_Completed;
-
-			// Start the storyboard on the topBar Grid
-			topBar.RenderTransform = new TranslateTransform();
-			Storyboard.SetTargetProperty(animation, new PropertyPath("(UIElement.RenderTransform).(TranslateTransform.Y)"));
-			Storyboard.SetTarget(animation, topBar);
-			sb.Begin();
+			// soon
 		}
 
-		public void ToggleButton_Click(object sender, RoutedEventArgs e)
+		public  void Openbar()
 		{
-			if (barToggle.IsChecked == true)
+			if(topBar.Height == 0)
 			{
 				var storyboard = new Storyboard();
 				var doubleAnimation = new DoubleAnimation
@@ -342,7 +314,10 @@ namespace WPF.Essential.Design.Elements
 
 				storyboard.Begin(topBar);
 			}
-			else
+		}
+		public  void Closebar()
+		{
+			if (topBar.Height != 0)
 			{
 				var storyboard = new Storyboard();
 				var doubleAnimation = new DoubleAnimation
@@ -360,40 +335,10 @@ namespace WPF.Essential.Design.Elements
 			}
 		}
 
-
-		public  void Openbar()
+		private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
 		{
-			var storyboard = new Storyboard();
-			var doubleAnimation = new DoubleAnimation
-			{
-				From = 0,
-				To = 300,
-				Duration = TimeSpan.FromSeconds(0.3),
-				EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
-			};
-			Storyboard.SetTargetName(doubleAnimation, "topBar");
-			Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(FrameworkElement.HeightProperty));
-			storyboard.Children.Add(doubleAnimation);
-
-			storyboard.Begin(topBar);
-		}
-		public  void Closebar()
-		{
-			var storyboard = new Storyboard();
-			var doubleAnimation = new DoubleAnimation
-			{
-				From = 300,
-				To = 0,
-				Duration = TimeSpan.FromSeconds(0.3),
-				EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
-			};
-			Storyboard.SetTargetName(doubleAnimation, "topBar");
-			Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(FrameworkElement.HeightProperty));
-			storyboard.Children.Add(doubleAnimation);
-
-			storyboard.Begin(topBar);
-
-
+			if (e.ChangedButton == MouseButton.Left)
+				this.DragMove();
 		}
 	}
 }

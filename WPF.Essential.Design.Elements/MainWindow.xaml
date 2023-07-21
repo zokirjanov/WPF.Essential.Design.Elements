@@ -38,12 +38,9 @@
 							<!--<Border.Background>
                                 <ImageBrush ImageSource="Resources/logo.png" Stretch="Uniform"/>
                             </Border.Background>-->
-							<ToggleButton Click="ToggleButton_Click" x:Name="barToggle">
-								
-							</ToggleButton>
 						</Border>
 
-						<Label Content="Design"
+						<Label Content="Design App"
                                Foreground="{DynamicResource PrimaryTextColor}"
                                FontWeight="Bold"
                                FontSize="16"
@@ -114,6 +111,9 @@
 					<RowDefinition/>
 				</Grid.RowDefinitions>
 
+				<Grid Cursor="ScrollAll" MouseDown="Grid_MouseDown"  Background="{DynamicResource PrimaryBackgroundColor}">
+					
+				</Grid>
 				<ToggleButton x:Name="Tg_Btn" Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource iToggleButtonStyle}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="10,15,0,15" Height="30" Width="30" Click="Tg_Btn_Click">
 					<ToggleButton.Triggers>
 						<EventTrigger RoutedEvent="ToggleButton.Unchecked">
@@ -136,6 +136,7 @@
 				</ToggleButton>
 
 				<!-- Start: Button Close | Restore | Minimize -->
+				
 				<StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft" Grid.RowSpan="2">
 					<Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
 					<Button x:Name="btnRestore" Margin="5,0" Click="btnRestore_Click">
