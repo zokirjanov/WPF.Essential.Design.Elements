@@ -14,7 +14,23 @@
 				<TextBlock Text="Home" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
 				<Button Height="50" Width="200" Margin="0 100 0 0" Click="Button_Click_1"></Button>
-			</Grid>
+                <Button Content="Click me!" Margin="0 300 0 0" Width="100" Height="50" Background="#FF333333" Foreground="White">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <DropShadowEffect ShadowDepth="0" Color="#FF33FF33" BlurRadius="25"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF444444"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
 		</Border>
 		<Grid x:Name="blurFon" Background="Red" Visibility="Collapsed" Opacity="0.2" MouseDown="blurFon_MouseDown" >
 			<Grid.Effect>
