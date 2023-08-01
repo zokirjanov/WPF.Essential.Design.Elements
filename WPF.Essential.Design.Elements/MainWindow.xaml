@@ -157,9 +157,9 @@
 
 				<Frame Grid.Row="1"
 					   Background="{DynamicResource SecundaryBackgroundColor}"
-                       Name="fContainer"
-                       Margin="0"
-                       NavigationUIVisibility="Hidden">
+			        	   Name="fContainer"
+			                   Margin="0"
+			         	   NavigationUIVisibility="Hidden">
 				</Frame>
 
 				<Grid Grid.Row="1" x:Name="blurFon" Background="Red" Visibility="Collapsed" Opacity="0.2">
