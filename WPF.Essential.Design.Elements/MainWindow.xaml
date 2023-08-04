@@ -20,7 +20,6 @@
 
 			<Border Grid.Column="0"
                     Background="{DynamicResource SecundaryBackgroundColor}"
-                    CornerRadius="8 0 0 8"
 					BorderBrush="#444746"
 					BorderThickness="0 0 1 0">
 				<Grid x:Name="GridNav" Width="60">
