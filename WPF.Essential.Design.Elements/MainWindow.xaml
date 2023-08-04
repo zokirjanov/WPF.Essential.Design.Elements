@@ -11,8 +11,7 @@
         Background="Transparent" AllowsTransparency="True"
         ResizeMode="NoResize" FontFamily="Poppins">
 
-	<Border Background="{DynamicResource PrimaryBackgroundColor}"
-            CornerRadius="8">
+	<Border Background="{DynamicResource PrimaryBackgroundColor}">
 		<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="Auto"/>
@@ -111,9 +110,8 @@
 					<RowDefinition/>
 				</Grid.RowDefinitions>
 
-				<Grid Cursor="ScrollAll" MouseDown="Grid_MouseDown"  Background="{DynamicResource PrimaryBackgroundColor}">
-					
-				</Grid>
+				<Grid Cursor="ScrollAll" MouseDown="Grid_MouseDown"   Background="{DynamicResource PrimaryBackgroundColor}"></Grid>
+				
 				<ToggleButton x:Name="Tg_Btn" Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource iToggleButtonStyle}" HorizontalAlignment="Left" BorderThickness="0" Background="Transparent" Margin="10,15,0,15" Height="30" Width="30" Click="Tg_Btn_Click">
 					<ToggleButton.Triggers>
 						<EventTrigger RoutedEvent="ToggleButton.Unchecked">
@@ -156,11 +154,12 @@
 				<!-- End: Button Close | Restore | Minimize -->
 
 				<Frame Grid.Row="1"
-					   Background="{DynamicResource SecundaryBackgroundColor}"
-			        	   Name="fContainer"
-			                   Margin="0"
-			         	   NavigationUIVisibility="Hidden">
+					Background="{DynamicResource SecundaryBackgroundColor}"
+			        Name="fContainer"
+			        Margin="0"
+			        NavigationUIVisibility="Hidden">
 				</Frame>
+					
 
 				<Grid Grid.Row="1" x:Name="blurFon" Background="Red" Visibility="Collapsed" Opacity="0.2">
 					<Grid.Effect>
